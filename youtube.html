@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Style Menu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #fff;
+            font-family: "Roboto", Arial, sans-serif;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background-color: #0f0f0f;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .menu-btn:hover {
+            background-color: #272727;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .logo i {
+            color: #ff0000;
+            font-size: 28px;
+        }
+
+        .nav-center {
+            flex: 1;
+            max-width: 732px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .search-input {
+            flex: 1;
+            background-color: #121212;
+            border: 1px solid #303030;
+            color: #fff;
+            padding: 0 16px;
+            height: 40px;
+            border-radius: 40px 0 0 40px;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: #1c62b9;
+        }
+
+        .search-input::placeholder {
+            color: #888;
+        }
+
+        .search-btn {
+            background-color: #222;
+            border: 1px solid #303030;
+            border-left: none;
+            color: #fff;
+            padding: 0 24px;
+            height: 40px;
+            border-radius: 0 40px 40px 0;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #3f3f3f;
+        }
+
+        .voice-btn {
+            background-color: #181818;
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+
+        .voice-btn:hover {
+            background-color: #272727;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-icon {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+
+        .nav-icon:hover {
+            background-color: #272727;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background-color: #cc0000;
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            object-fit: cover;
+            background-color: #ff6b00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            background-color: #0f0f0f;
+            width: 240px;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 12px 0;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #717171;
+            border-radius: 4px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 10px 24px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .sidebar-item:hover {
+            background-color: #272727;
+        }
+
+        .sidebar-item.active {
+            background-color: #272727;
+            font-weight: 500;
+        }
+
+        .sidebar-item i {
+            font-size: 20px;
+            width: 24px;
+        }
+
+        .sidebar-divider {
+            border-top: 1px solid #3f3f3f;
+            margin: 12px 0;
+        }
+
+        .sidebar-section-title {
+            padding: 8px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .subscription-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 24px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .subscription-item:hover {
+            background-color: #272727;
+        }
+
+        .subscription-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #cc0000;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+
+        .main-content {
+            margin-left: 240px;
+            margin-top: 56px;
+            padding: 24px;
+        }
+
+        .channel-banner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .channel-header {
+            display: flex;
+            gap: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #3f3f3f;
+        }
+
+        .channel-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .channel-info {
+            flex: 1;
+        }
+
+        .channel-name {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .channel-handle {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .channel-stats {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .subscribe-btn {
+            background-color: #fff;
+            color: #0f0f0f;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #d9d9d9;
+        }
+
+        .channel-tabs {
+            display: flex;
+            gap: 32px;
+            padding: 16px 0;
+            border-bottom: 2px solid #3f3f3f;
+        }
+
+        .channel-tab {
+            color: #aaa;
+            text-decoration: none;
+            padding-bottom: 14px;
+            position: relative;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .channel-tab:hover {
+            color: #fff;
+        }
+
+        .channel-tab.active {
+            color: #fff;
+        }
+
+        .channel-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <div class="nav-left">
+            <button class="menu-btn">
+                <i class="bi bi-bars"></i>
+            </button>
+            <a href="#" class="logo">
+                <i class="bi bi-youtube"></i>
+                <span>YouTube</span>
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button class="voice-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="nav-icon">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="nav-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">9</span>
+            </button>
+            <div class="user-avatar">U</div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="#" class="sidebar-item active">
+            <i class="fas fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-video"></i>
+            <span>Shorts</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-layer-group"></i>
+            <span>Subscriptions</span>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section-title">You <i class="fas fa-chevron-right"></i></div>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-clock-rotate-left"></i>
+            <span>History</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-list"></i>
+            <span>Playlists</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-circle-play"></i>
+            <span>Your videos</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="far fa-clock"></i>
+            <span>Watch Later</span>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Liked videos</span>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section-title">Subscriptions</div>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/men.png" alt="channel" class="subscription-avatar">
+            <span>RewriteYT</span>
+            <span class="live-dot"></span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/lights.png" alt="channel" class="subscription-avatar">
+            <span>Bhajan Marg</span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="public/images/RUG.png" alt="channel" class="subscription-avatar">
+            <span>Info Desk</span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/underwater-ocean-background-sun-rays-clear-blue-water-underwater-ocean-background-sun-rays-clear-blue-water-high-375626351.webp" alt="channel" class="subscription-avatar">
+            <span>Bhajan India</span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/saree.webp" alt="channel" class="subscription-avatar">
+            <span>Nathan Nazareth</span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/figurines.png" alt="channel" class="subscription-avatar">
+            <span>Chai aur Code</span>
+        </a>
+        <a href="#" class="subscription-item">
+            <img src="./public/images/shelves.png" alt="channel" class="subscription-avatar">
+            <span>Brain Station</span>
+        </a>
+    </div>
+
+
+    <div class="main-content">
+        <div class="channel-banner"><img src="./public/images/pw channel banner.jpg" alt="Channel Banner" style="width:100%; height:100%; border-radius:12px; object-fit:cover;"></div>
+
+        <div class="channel-header">
+            <div class="channel-avatar"> <img src="public/images/pw banner.jpg" alt="Channel Avatar" style="width:90%; height:90%; border-radius:100px; object-fit:cover;"></div>
+            <div class="channel-info">
+                <h1 class="channel-name">Physics Wallah - Alakh Pandey</h1>
+                <div class="channel-handle">@PhysicsWallah • 13.9M subscribers • 1.6K videos</div>
+                <div class="channel-stats">Physics is ♡ ...more</div>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="channel-tabs">
+            <a href="#" class="channel-tab active">Home</a>
+            <a href="#" class="channel-tab">Videos</a>
+            <a href="#" class="channel-tab">Shorts</a>
+            <a href="#" class="channel-tab">Live</a>
+            <a href="#" class="channel-tab">Courses</a>
+            <a href="#" class="channel-tab">Playlists</a>
+            <a href="#" class="channel-tab">Posts</a>
+        </div>
+
+        <div style="padding-top: 24px;">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
