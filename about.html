@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Netflix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">NETFLIX</div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="browse.html" class="nav-link">Browse</a>
+        <a href="mylist.html" class="nav-link">My List</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </div>
+      <div class="nav-right">
+        <button class="search-btn" onclick="toggleSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search movies, shows..." id="searchInput">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="about-content">
+      <h1>About Netflix</h1>
+      <p>The world's leading streaming entertainment service</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgb(229, 9, 20)">
+            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+            <polyline points="17 2 12 7 7 2"></polyline>
+          </svg>
+        </div>
+        <h2>Our Mission</h2>
+        <p>To entertain the world with stories that inspire, inform, and bring people together. We strive to deliver the best streaming experience possible.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgb(229, 9, 20)">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h2>Global Reach</h2>
+        <p>With over 200 million subscribers worldwide, Netflix brings entertainment to every corner of the globe in multiple languages.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgb(229, 9, 20)">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h2>Original Content</h2>
+        <p>Award-winning Netflix Originals including series, films, documentaries, and stand-up specials created exclusively for our members.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="stats-section">
+    <h2>Netflix By The Numbers</h2>
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3>200M+</h3>
+        <p>Subscribers Worldwide</p>
+      </div>
+      <div class="stat-card">
+        <h3>190+</h3>
+        <p>Countries</p>
+      </div>
+      <div class="stat-card">
+        <h3>10,000+</h3>
+        <p>Titles Available</p>
+      </div>
+      <div class="stat-card">
+        <h3>30+</h3>
+        <p>Languages</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="timeline-section">
+    <h2>Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1997</div>
+        <div class="timeline-content">
+          <h3>Founded</h3>
+          <p>Netflix was founded as a DVD rental service</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2007</div>
+        <div class="timeline-content">
+          <h3>Streaming Launch</h3>
+          <p>Introduced streaming service to members</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-content">
+          <h3>Original Content</h3>
+          <p>Released first Netflix Original series</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-content">
+          <h3>Global Leader</h3>
+          <p>Leading streaming platform worldwide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="team-section">
+    <h2>Leadership Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgb(255, 255, 255)">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h3>Reed Hastings</h3>
+        <p>Co-Founder & Executive Chairman</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgb(255, 255, 255)">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h3>Ted Sarandos</h3>
+        <p>Co-CEO & Chief Content Officer</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgb(255, 255, 255)">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h3>Greg Peters</h3>
+        <p>Co-CEO & COO</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgb(255, 255, 255)">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h3>Spencer Neumann</h3>
+        <p>Chief Financial Officer</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Questions? Call 1-800-123-4567</p>
+      <div class="footer-links">
+        <a href="#">FAQ</a>
+        <a href="#">Help Center</a>
+        <a href="#">Account</a>
+        <a href="#">Media Center</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Jobs</a>
+        <a href="#">Ways to Watch</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p>Netflix Clone Demo © 2024</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Netflix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="signin-page">
+    <div class="signin-header">
+      <a href="index.html" class="logo">NETFLIX</a>
+    </div>
+
+    <div class="signin-container">
+      <div class="signin-box">
+        <h1>Sign In</h1>
+        <form onsubmit="handleSignIn(event)">
+          <div class="form-group">
+            <input type="email" id="signinEmail" placeholder="Email or phone number" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="signinPassword" placeholder="Password" required>
+          </div>
+          <button type="submit" class="signin-submit">Sign In</button>
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="help-link">Need help?</a>
+          </div>
+        </form>
+        <div class="signin-footer">
+          <p>New to Netflix? <a href="signup.html">Sign up now</a>.</p>
+          <p class="recaptcha-text">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="signin-page-footer">
+      <div class="footer-content">
+        <p>Questions? Call 1-800-123-4567</p>
+        <div class="footer-links">
+          <a href="#">FAQ</a>
+          <a href="#">Help Center</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Corporate Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

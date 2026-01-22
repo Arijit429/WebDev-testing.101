@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse - Netflix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">NETFLIX</div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="browse.html" class="nav-link active">Browse</a>
+        <a href="mylist.html" class="nav-link">My List</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-right">
+        <button class="search-btn" onclick="toggleSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search movies, shows..." id="searchInput">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </nav>
+
+  <section class="browse-hero">
+    <div class="browse-header">
+      <h1>Browse</h1>
+      <div class="genre-filter">
+        <button class="filter-btn active" onclick="filterGenre('all')">All</button>
+        <button class="filter-btn" onclick="filterGenre('action')">Action</button>
+        <button class="filter-btn" onclick="filterGenre('drama')">Drama</button>
+        <button class="filter-btn" onclick="filterGenre('comedy')">Comedy</button>
+        <button class="filter-btn" onclick="filterGenre('horror')">Horror</button>
+        <button class="filter-btn" onclick="filterGenre('scifi')">Sci-Fi</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="browse-content">
+    <div class="movies-grid" id="browseGrid">
+      <div class="movie-card" data-genre="action" onclick="openModal('The Last Stand')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=The+Last+Stand" alt="Movie">
+        <div class="movie-info">
+          <h3>The Last Stand</h3>
+          <p>Action • Thriller • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="drama" onclick="openModal('Broken Hearts')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Broken+Hearts" alt="Movie">
+        <div class="movie-info">
+          <h3>Broken Hearts</h3>
+          <p>Drama • Romance • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="comedy" onclick="openModal('Laugh Out Loud')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Laugh+Out+Loud" alt="Movie">
+        <div class="movie-info">
+          <h3>Laugh Out Loud</h3>
+          <p>Comedy • Family • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="horror" onclick="openModal('Dark Shadows')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Dark+Shadows" alt="Movie">
+        <div class="movie-info">
+          <h3>Dark Shadows</h3>
+          <p>Horror • Mystery • 2024</p>
+          <div class="rating">★★★☆☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="scifi" onclick="openModal('Future World')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Future+World" alt="Movie">
+        <div class="movie-info">
+          <h3>Future World</h3>
+          <p>Sci-Fi • Adventure • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="action" onclick="openModal('Speed Chase')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Speed+Chase" alt="Movie">
+        <div class="movie-info">
+          <h3>Speed Chase</h3>
+          <p>Action • Crime • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="drama" onclick="openModal('Silent Tears')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Silent+Tears" alt="Movie">
+        <div class="movie-info">
+          <h3>Silent Tears</h3>
+          <p>Drama • Biography • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="comedy" onclick="openModal('Party Time')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Party+Time" alt="Movie">
+        <div class="movie-info">
+          <h3>Party Time</h3>
+          <p>Comedy • Music • 2024</p>
+          <div class="rating">★★★☆☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="horror" onclick="openModal('Nightmare')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Nightmare" alt="Movie">
+        <div class="movie-info">
+          <h3>Nightmare</h3>
+          <p>Horror • Thriller • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="scifi" onclick="openModal('Space Odyssey')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Space+Odyssey" alt="Movie">
+        <div class="movie-info">
+          <h3>Space Odyssey</h3>
+          <p>Sci-Fi • Drama • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="action" onclick="openModal('War Zone')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=War+Zone" alt="Movie">
+        <div class="movie-info">
+          <h3>War Zone</h3>
+          <p>Action • War • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" data-genre="drama" onclick="openModal('Life Story')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Life+Story" alt="Movie">
+        <div class="movie-info">
+          <h3>Life Story</h3>
+          <p>Drama • Family • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Questions? Call 1-800-123-4567</p>
+      <div class="footer-links">
+        <a href="#">FAQ</a>
+        <a href="#">Help Center</a>
+        <a href="#">Account</a>
+        <a href="#">Media Center</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Jobs</a>
+        <a href="#">Ways to Watch</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p>Netflix Clone Demo © 2024</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="movieModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Movie Title</h2>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Movie">
+        <div class="modal-info">
+          <p id="modalDescription">This is a great movie with amazing storyline and characters.</p>
+          <div class="modal-details">
+            <p><strong>Genre:</strong> Action, Adventure</p>
+            <p><strong>Duration:</strong> 2h 15m</p>
+            <p><strong>Rating:</strong> ★★★★☆</p>
+          </div>
+          <div class="modal-buttons">
+            <button class="play-btn">▶ Play</button>
+            <button class="add-btn" onclick="addToList()">+ My List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

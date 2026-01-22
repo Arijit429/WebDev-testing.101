@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Netflix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="signin-page">
+    <div class="signin-header">
+      <a href="index.html" class="logo">NETFLIX</a>
+    </div>
+
+    <div class="signin-container">
+      <div class="signin-box">
+        <h1>Sign Up</h1>
+        <p class="signup-subtitle">Create your account to start watching</p>
+        <form onsubmit="handleSignUp(event)">
+          <div class="form-group">
+            <input type="text" id="signupName" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="signupEmail" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="signupPassword" placeholder="Password" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+          </div>
+          <div class="form-group">
+            <select id="signupPlan" required>
+              <option value="">Select a plan</option>
+              <option value="basic">Basic - $6.99/month</option>
+              <option value="standard">Standard - $12.99/month</option>
+              <option value="premium">Premium - $19.99/month</option>
+            </select>
+          </div>
+          <button type="submit" class="signin-submit">Sign Up</button>
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" required>
+              <span>I agree to Terms of Service</span>
+            </label>
+          </div>
+        </form>
+        <div class="signin-footer">
+          <p>Already have an account? <a href="signin.html">Sign in now</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="signin-page-footer">
+      <div class="footer-content">
+        <p>Questions? Call 1-800-123-4567</p>
+        <div class="footer-links">
+          <a href="#">FAQ</a>
+          <a href="#">Help Center</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Corporate Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
