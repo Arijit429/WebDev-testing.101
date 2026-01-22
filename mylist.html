@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My List - Netflix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">NETFLIX</div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="browse.html" class="nav-link">Browse</a>
+        <a href="mylist.html" class="nav-link active">My List</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-right">
+        <button class="search-btn" onclick="toggleSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search movies, shows..." id="searchInput">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </nav>
+
+  <section class="mylist-hero">
+    <div class="mylist-header">
+      <h1>My List</h1>
+      <p>Your personalized collection of favorites</p>
+    </div>
+  </section>
+
+  <section class="mylist-content">
+    <div id="myListContainer" class="movies-grid">
+      <div class="empty-state" id="emptyState">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgb(229, 9, 20)">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <h2>Your list is empty</h2>
+        <p>Add movies and shows to your list to watch them later</p>
+        <a href="browse.html" class="browse-link">Browse Content</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="recommendations">
+    <h2>Recommended For You</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="openModal('Mystery Island')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Mystery+Island" alt="Movie">
+        <div class="movie-info">
+          <h3>Mystery Island</h3>
+          <p>Adventure • Mystery • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" onclick="openModal('Love Forever')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Love+Forever" alt="Movie">
+        <div class="movie-info">
+          <h3>Love Forever</h3>
+          <p>Romance • Drama • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="movie-card" onclick="openModal('Cyber Attack')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Cyber+Attack" alt="Movie">
+        <div class="movie-info">
+          <h3>Cyber Attack</h3>
+          <p>Thriller • Tech • 2024</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="movie-card" onclick="openModal('Wild Nature')">
+        <img src="https://via.placeholder.com/250x350/51/e50914?text=Wild+Nature" alt="Movie">
+        <div class="movie-info">
+          <h3>Wild Nature</h3>
+          <p>Documentary • Nature • 2024</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Questions? Call 1-800-123-4567</p>
+      <div class="footer-links">
+        <a href="#">FAQ</a>
+        <a href="#">Help Center</a>
+        <a href="#">Account</a>
+        <a href="#">Media Center</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Jobs</a>
+        <a href="#">Ways to Watch</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p>Netflix Clone Demo © 2024</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="movieModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Movie Title</h2>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Movie">
+        <div class="modal-info">
+          <p id="modalDescription">This is a great movie with amazing storyline and characters.</p>
+          <div class="modal-details">
+            <p><strong>Genre:</strong> Action, Adventure</p>
+            <p><strong>Duration:</strong> 2h 15m</p>
+            <p><strong>Rating:</strong> ★★★★☆</p>
+          </div>
+          <div class="modal-buttons">
+            <button class="play-btn">▶ Play</button>
+            <button class="add-btn" onclick="addToList()">+ My List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
